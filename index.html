@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,6 @@
             padding: 40px 20px;
         }
 
-        /* Hero / Header Section */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
             color: white;
@@ -70,7 +69,6 @@
             font-weight: 500;
         }
 
-        /* Profile Image Styles */
         .profile-img-container {
             width: 160px;
             height: 160px;
@@ -83,12 +81,6 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-        }
-
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .profile-placeholder {
@@ -110,7 +102,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.2s;
         }
 
         .contact-bar a:hover {
@@ -131,7 +122,6 @@
             font-weight: 600;
             font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.2s ease;
             cursor: pointer;
         }
 
@@ -143,7 +133,6 @@
 
         .btn-primary:hover {
             background-color: #1d4ed8;
-            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -155,10 +144,8 @@
         .btn-outline:hover {
             border-color: white;
             color: white;
-            background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Layout Grid */
         .main-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -206,14 +193,8 @@
             color: var(--secondary);
         }
 
-        /* Timeline / Jobs */
         .timeline-item {
             margin-bottom: 30px;
-            position: relative;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
         }
 
         .role-title {
@@ -254,7 +235,6 @@
             font-weight: bold;
         }
 
-        /* Enhanced Skills Categorization */
         .skill-category {
             margin-bottom: 20px;
         }
@@ -289,7 +269,6 @@
             border: 1px solid #dcfce7;
         }
 
-        /* Cover Letter Styling */
         .cover-letter-box {
             background: #f8fafc;
             border: 1px dashed var(--border);
@@ -300,7 +279,6 @@
             color: #334155;
         }
 
-        /* Contact Form / Get In Touch */
         .form-control {
             margin-bottom: 15px;
         }
@@ -319,15 +297,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 0.95rem;
-            transition: all 0.2s;
             background: #fafafa;
-        }
-
-        .form-control input:focus, .form-control textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
         }
 
         footer {
@@ -343,7 +313,7 @@
 <body>
 
     <div class="container">
-        <!-- HERO / HEADER SECTION WITH IMAGE PORT -->
+        <!-- HERO / HEADER SECTION -->
         <header>
             <div class="header-content">
                 <h1>KASHER BUTT</h1>
@@ -360,5 +330,22 @@
                 </div>
             </div>
             
-            <!-- Profile Photo Handler -->
             <div class="profile-img-container">
+                <div class="profile-placeholder"><i class="fa-solid fa-user-tie"></i></div>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT GRID -->
+        <div class="main-layout">
+            
+            <!-- LEFT COLUMN -->
+            <div class="left-column">
+                <section id="about">
+                    <h2><i class="fa-solid fa-circle-user"></i> Professional Profile</h2>
+                    <p>
+                        Highly active, physically fit, and exceptionally resilient Warehouse Operations Specialist with an outstanding reputation for workplace honesty, hard work, and operational reliability. Thrives under pressure, loves resolving complex supply chain challenges, and possesses highly adaptable technical learning skills. Expertly handles end-to-end warehousing cycles with standard industrial precision.
+                    </p>
+                </section>
+
+                <section id="experience">
+                    <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
