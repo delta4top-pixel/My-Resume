@@ -1,351 +1,146 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasher Butt - Warehouse Operations & Logistics Specialist</title>
+    <title>Kasher Butt - Resume Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
-    
     <style>
         :root {
             --primary: #0f172a;
             --secondary: #2563eb;
-            --accent: #3b82f6;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
+            --bg: #f8fafc;
+            --card: #ffffff;
             --border: #e2e8f0;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.7; padding: 30px 15px; }
+        .wrapper { max-width: 1100px; margin: 0 auto; }
+        
+        header { background: var(--primary); color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; }
+        header h1 { font-size: 2.5rem; margin-bottom: 5px; }
+        header p { color: #94a3b8; font-size: 1.2rem; margin-bottom: 20px; }
+        
+        .contact-bar { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; font-size: 0.95rem; }
+        .contact-bar a, .contact-bar span { color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        
+        .btn-box { display: flex; gap: 15px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; cursor: pointer; }
+        .btn-p { background: var(--secondary); color: white; border: none; }
+        .btn-o { background: transparent; color: #cbd5e1; border: 2px solid #475569; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        .layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+        @media (max-width: 868px) { .layout { grid-template-columns: 1fr; } }
+        
+        section { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 25px; }
+        section h2 { font-size: 1.4rem; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        section h2 i { color: var(--secondary); }
 
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.7;
-        }
+        .job { margin-bottom: 25px; }
+        .job h3 { font-size: 1.15rem; color: var(--primary); }
+        .job h4 { color: var(--secondary); font-size: 1rem; margin-bottom: 5px; }
+        .job .date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+        
+        ul { list-style: none; }
+        ul li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.95rem; }
+        ul li::before { content: "→"; color: var(--secondary); position: absolute; left: 0; font-weight: bold; }
 
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        .skill-group { margin-bottom: 15px; }
+        .skill-group h3 { font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; color: var(--text-muted); }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: #eff6ff; color: var(--secondary); padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+        .tag-t { background: #f0fdf4; color: #16a34a; }
 
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: white;
-            padding: 50px 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .header-content {
-            flex: 1;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-
-        .profile-img-container {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid var(--accent);
-            overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-            background: #334155;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .profile-placeholder {
-            font-size: 4rem;
-            color: #94a3b8;
-        }
-
-        .contact-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .contact-bar a, .contact-bar span {
-            color: #cbd5e1;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-bar a:hover {
-            color: var(--accent);
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #cbd5e1;
-            border: 2px solid #475569;
-        }
-
-        .btn-outline:hover {
-            border-color: white;
-            color: white;
-        }
-
-        .main-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 868px) {
-            header {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 40px 20px;
-            }
-            .contact-bar {
-                justify-content: center;
-            }
-            .cta-group {
-                justify-content: center;
-            }
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        section {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            margin-bottom: 30px;
-        }
-
-        section h2 {
-            font-size: 1.45rem;
-            color: var(--primary);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 12px;
-            margin-bottom: 22px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        section h2 i {
-            color: var(--secondary);
-        }
-
-        .timeline-item {
-            margin-bottom: 30px;
-        }
-
-        .role-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .company-name {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .job-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .job-bullets {
-            list-style: none;
-        }
-
-        .job-bullets li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .job-bullets li::before {
-            content: "→";
-            color: var(--secondary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .skill-category {
-            margin-bottom: 20px;
-        }
-
-        .skill-category h3 {
-            font-size: 0.95rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .skills-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .badge {
-            background: #eff6ff;
-            color: var(--secondary);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid #dbeafe;
-        }
-
-        .badge-tech {
-            background: #f0fdf4;
-            color: #16a34a;
-            border: 1px solid #dcfce7;
-        }
-
-        .cover-letter-box {
-            background: #f8fafc;
-            border: 1px dashed var(--border);
-            padding: 25px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            white-space: pre-line;
-            color: #334155;
-        }
-
-        .form-control {
-            margin-bottom: 15px;
-        }
-
-        .form-control label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--primary);
-        }
-
-        .form-control input, .form-control textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            background: #fafafa;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
-        }
+        .box-letter { background: #f8fafc; border: 1px dashed var(--border); padding: 20px; border-radius: 6px; font-size: 0.95rem; white-space: pre-line; }
+        
+        .form-input { margin-bottom: 15px; }
+        .form-input label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; }
+        .form-input input, .form-input textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; background: #fafafa; }
+        
+        footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.9rem; margin-top: 30px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- HERO / HEADER SECTION -->
+    <div class="wrapper">
         <header>
-            <div class="header-content">
-                <h1>KASHER BUTT</h1>
-                <p>Warehouse Operations & Logistics Specialist</p>
-                <div class="contact-bar">
-                    <span><i class="fa-solid fa-location-dot"></i> Hamden, CT</span>
-                    <a href="tel:475-775-0772"><i class="fa-solid fa-phone"></i> 475-775-0772</a>
-                    <a href="mailto:Kasharkashmiri@gmail.com"><i class="fa-solid fa-envelope"></i> Kasharkashmiri@gmail.com</a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                </div>
-                <div class="cta-group">
-                    <a href="resume.pdf" download class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume (PDF)</a>
-                    <a href="#contact-section" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
-                </div>
+            <h1>KASHER BUTT</h1>
+            <p>Warehouse Operations & Logistics Specialist</p>
+            <div class="contact-bar">
+                <span><i class="fa-solid fa-location-dot"></i> Hamden, CT</span>
+                <a href="tel:475-775-0772"><i class="fa-solid fa-phone"></i> 475-775-0772</a>
+                <a href="mailto:Kasharkashmiri@gmail.com"><i class="fa-solid fa-envelope"></i> Kasharkashmiri@gmail.com</a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             </div>
-            
-            <div class="profile-img-container">
-                <div class="profile-placeholder"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="btn-box">
+                <a href="resume.pdf" download class="btn btn-p"><i class="fa-solid fa-download"></i> Download Resume (PDF)</a>
+                <a href="#contact-sec" class="btn btn-o"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
             </div>
         </header>
 
-        <!-- MAIN LAYOUT GRID -->
-        <div class="main-layout">
-            
+        <div class="layout">
             <!-- LEFT COLUMN -->
-            <div class="left-column">
-                <section id="about">
-                    <h2><i class="fa-solid fa-circle-user"></i> Professional Profile</h2>
-                    <p>
-                        Highly active, physically fit, and exceptionally resilient Warehouse Operations Specialist with an outstanding reputation for workplace honesty, hard work, and operational reliability. Thrives under pressure, loves resolving complex supply chain challenges, and possesses highly adaptable technical learning skills. Expertly handles end-to-end warehousing cycles with standard industrial precision.
-                    </p>
+            <div class="main-side">
+                <section>
+                    <h2><i class="fa-solid fa-user"></i> Professional Profile</h2>
+                    <p>Highly active, physically fit, and exceptionally resilient Warehouse Operations Specialist with an outstanding reputation for workplace honesty, hard work, and operational reliability. Thrives under pressure, loves resolving complex supply chain challenges, and possesses highly adaptable technical learning skills. Expertly handles end-to-end warehousing cycles with standard industrial precision.</p>
                 </section>
 
-                <section id="experience">
+                <section>
                     <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+                    <div class="job">
+                        <h3>Stock & Operations Associate</h3>
+                        <h4>Macy's Warehouse</h4>
+                        <div class="date" id="macy-time">July 2024 - Present</div>
+                        <ul>
+                            <li>Manage high-volume operational cycles covering Receiving, Putaway, Stock Allocation, Picking, Packing, NCT (Non-Conformant Transfer), and Returns processing.</li>
+                            <li>Adept at deploying mobile inventory technologies, utilizing modern Honeywell CT40 smart terminals alongside legacy Gladiator devices and tactical RF gun scanners.</li>
+                            <li>Run digital cross-checking using terminal software and desktop inventory computers to execute data logging and eliminate stock inaccuracies.</li>
+                            <li>Maintain strict compliance with US warehouse health, physical safety, and continuous high-speed logistics performance benchmarks.</li>
+                        </ul>
+                    </div>
+                    <div class="job">
+                        <h3>Owner & Factory Manager</h3>
+                        <h4>Wool Factory</h4>
+                        <div class="date">May 2018 - March 2024 | Pakistan</div>
+                        <ul>
+                            <li>Controlled complete factory workflows, scheduling production phases, managing multi-tier logistics pipelines, and directing production teams.</li>
+                            <li>Enforced top-quality benchmark validations spanning across raw materials inbound sorting up to outgoing supply delivery dispatching.</li>
+                            <li>Administered commercial client communication, procurement agreements, financial tracking records, and inventory accounting.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fa-solid fa-file-text"></i> Professional Cover Letter</h2>
+                    <div class="box-letter">
+Dear Hiring Manager,
+
+I am writing to express my strong interest in the Warehouse Operations position at your company. With a solid background in end-to-end logistics, inventory control, and technical hardware utilization at Macy's Warehouse, combined with past business management experience, I am confident in my ability to bring high value, accuracy, and efficiency to your warehouse operations.
+
+During my tenure at Macy’s Warehouse, I mastered the core life cycles of warehouse management, including Receiving, Putaway, Stock Management, Picking, Packing, NCT, and Returns. I am exceptionally proficient in warehouse technology, working daily with desktop inventory systems and modern handheld devices such as the Honeywell CT40, as well as legacy tools like Gladiator and RF scanner guns. This technical agility allows me to log data swiftly, eliminate scanning errors, and maintain real-time tracking updates.
+
+In addition to my technical and tactical logistics skills, my previous experience running a manufacturing factory has equipped me with a deep understanding of quality control, team coordination, and workplace safety. I thrive in fast-paced environments where speed must match precision, and I am eager to apply this proactive mindset to support your facility's daily targets.
+
+Thank you for your time and consideration. I welcome the opportunity to discuss how my diverse operational skillset and hardware proficiency align with your team's current logistics goals.
+
+Sincerely,
+Kasher Butt
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="sub-side">
+                <section>
+                    <h2><i class="fa-solid fa-gear"></i> Skills Summary</h2>
+                    <div class="skill-group">
+                        <h3>Tech & Computer</h3>
+                        <div class="tags">
+                            <span class="tag tag-t">Honeywell CT40</span>
+                            <span class="tag tag-t">Gladiator Scanners</span>
+                            <span class="tag tag-t">RF Scanner Guns</span>
+                            <span class="tag tag-t">Computer Literacy</span>
