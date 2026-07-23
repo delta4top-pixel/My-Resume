@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasher Butt - Warehouse Operations Specialist</title>
+    <!-- Google Fonts for Professional Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- FontAwesome for Professional Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #2563eb;
+            --text-color: #334155;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header / Profile Section */
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Action Buttons */
+        .cta-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Job Items */
+        .job-card {
+            margin-bottom: 25px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .job-company {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills Tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--secondary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid var(--secondary-color);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            border: none;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <h1>KASHER BUTT</h1>
+            <p>Warehouse Operations Specialist</p>
+            <div class="contact-info">
+                <span><i class="fa-solid fa-location-dot"></i> Hamden, CT</span>
+                <a href="tel:475-775-0772"><i class="fa-solid fa-phone"></i> 475-775-0772</a>
+                <a href="mailto:Kasharkashmiri@gmail.com"><i class="fa-solid fa-envelope"></i> Kasharkashmiri@gmail.com</a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
+            <div class="cta-buttons">
+                <!-- Replace 'resume.pdf' with your actual PDF filename later -->
+                <a href="resume.pdf" download class="btn btn-primary"><i class="fa-solid fa-download"></i> Download Resume (PDF)</a>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT -->
+        <div class="main-grid">
+            <!-- LEFT COLUMN: Summary & Experience -->
+            <div class="left-col">
+                <section id="summary">
+                    <h2><i class="fa-solid fa-user"></i> Professional Summary</h2>
+                    <p>
+                        Highly active, physically fit, and energetic Warehouse Operations Specialist with an exceptional work ethic. Energetic and dedicated to executing logistics tasks with total honesty and precision. Thrives on overcoming complex workflow challenges and adapting to advanced logistics technologies. Expert in managing critical cycles including Receiving, Putaway, Stock Management, Picking, Packing, NCT, and Returns processing.
+                    </p>
+                </section>
+
+                <section id="experience">
+                    <h2><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+                    
+                    <div class="job-card">
+                        <div class="job-title">Stock & Operations Associate</div>
+                        <div class="job-company">Macy's Warehouse</div>
+                        <div class="job-date" id="macys-date">July 2024 - Present</div>
+                        <ul>
+                            <li>Expertly operate advanced logistics devices, specializing in the <strong>Honeywell CT40</strong> handheld device, as well as <strong>Gladiator</strong> and RF gun scanners.</li>
+                            <li>Handle all stages of warehouse processing seamlessly: Receiving, Putaway, Stock Management, Picking, Packing, Non-Conformant Transfer (NCT), and Returns.</li>
+                            <li>Utilize computerized inventory management software to log real-time stock data and eliminate operational discrepancies.</li>
+                            <li>Ensure peak efficiency and rigorous safety compliance in high-volume, fast-paced environments.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-title">Owner & Factory Manager</div>
+                        <div class="job-company">Wool Factory</div>
+                        <div class="job-date">May 2018 - March 2024 | Pakistan</div>
+                        <ul>
+                            <li>Directed daily manufacturing and factory operations including production scheduling and team leadership.</li>
+                            <li>Oversaw strict quality control benchmarks throughout raw wool processing cycles.</li>
+                            <li>Managed customer orders, logistics coordination, pricing negotiations, and verified high client satisfaction.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN: Skills, Info & Contact Form -->
+            <div class="right-col">
+                <section id="skills">
+                    <h2><i class="fa-solid fa-gear"></i> Technical Skills</h2>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Honeywell CT40</span>
